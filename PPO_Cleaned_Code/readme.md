@@ -42,7 +42,7 @@ Results PPO on Bipedal Walker
 <div>
 <h3> 3. Codes </h3>
 <ul>
-<li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/PPO_Cleaned_Code/5.1_PPO_Bipedal_Walker-revised.ipynb> <b>  PPO for Bipedal Walker - Notebook (Cleaned and Organized code)</b> </a></li>
+<li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/PPO_Cleaned_Code/5.1_PPO_Bipedal_Walker-revised-clr.ipynb> <b>  PPO for Bipedal Walker - Notebook (Cleaned and Organized code)</b> </a></li>
 
 <li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/5.2_PPO_Lunar_Lander.ipynb> <b>  PPO for Lunar Lander - Notebook (Raw Code)</b> </a></li>
 </ul>
@@ -80,7 +80,7 @@ The code is tested with package versions -
 <li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/2.1_Value_Iteration.ipynb>   Value Iteration - Notebook  </a></li>
 <li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/3.0_DQN_Mountain_Car.ipynb>  DQN for Mountain Car - Notebook  </a></li>
 <li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/4.0_DDPG_Pendulum-mod.ipynb> DDPG for Pendulum - Notebook</a></li>
-<li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/5.1_PPO_Bipedal_Walker-mod.ipynb>  PPO for Bipedal Walker - Notebook</a></li>
+<li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/5.1_PPO_Bipedal_Walker-revised-clr.ipynb>  PPO for Bipedal Walker - Notebook</a></li>
 <li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/5.2_PPO_Lunar_Lander.ipynb>  PPO for Lunar Lander - Notebook </a></li>
 </ul>
 </div>
