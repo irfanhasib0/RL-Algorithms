@@ -10,10 +10,10 @@
 # LinkedIN : <a href="https://www.linkedin.com/in/irfanhasib/">https://www.linkedin.com/in/irfanhasib/</a><br>
 # 
 # Implementation Note :
-# <ul>
-#     <li> Impletated from scratch in python using following libraries - tensorflow, numpy, gym, opencv, matplotlib. </li>
-#     <li> Tested for Bipedal walker environment of OpenAI. </li>
-# </ul>
+#
+#     Impletated from scratch in python using following libraries - tensorflow, numpy, gym, opencv, matplotlib. </li>
+#     Tested for Bipedal walker environment of OpenAI. </li>
+#
 # 
 # 
 
@@ -90,28 +90,28 @@ with open(exp_root_path+'/params.txt','w') as file:
 
 
 # ###  Class definations
-# <b> 1. Class Actor():</b>
+# 1. Class Actor():
 # 
 #         Class for creating actor Network inheriting tensorflow.keras Model class
 #         
 #         -> __init__ : Layer definations
 #         -> call() : Network building
 #         
-# <b> 2. Class Critic():</b>
+# 2. Class Critic():
 #         
 #         Class for creating actor Network inheriting tensorflow.keras Model class
 #         
 #         -> __init__ : Layer definations
 #         -> call() : Network building
 #         
-# <b> 3. Class Memory():</b>
+# 3. Class Memory():
 #         
 #         Class for storing data samples and retriving when necessary. Each data sample to be stored consists of : state , action , mean, std, value, mask, reward
 #         
 #         -> append(data sample) appends one sample into memory
 #         -> retrive() -> data sample, retrives all the stored samples and cleares memory
 #         
-# <b> 4. Class Environment():</b>
+# 4. Class Environment():
 #         
 #         A wrapper around OpenAI environment. 
 #         
@@ -120,7 +120,7 @@ with open(exp_root_path+'/params.txt','w') as file:
 #         -> render() renders current environment image
 #         -> close() closes environment instance
 #         
-# <b> 5. CLass PPO_Model() : </b>
+# 5. CLass PPO_Model() : 
 #             
 #          Takes all the hyper-parameters as input.
 #          
