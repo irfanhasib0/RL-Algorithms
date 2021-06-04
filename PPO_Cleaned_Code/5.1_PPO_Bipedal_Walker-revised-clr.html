@@ -13077,17 +13077,16 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Proxilmal-Policy-Optimization">Proxilmal Policy Optimization<a class="anchor-link" href="#Proxilmal-Policy-Optimization">&#182;</a></h3><p>This is an implementation of the following paper by <a href="https://openai.com/">OpenAI</a><br>
-<b><i>Proximal Policy Optimization Algorithms</b>&lt;/i&gt; <a href="https://arxiv.org/abs/1707.06347">arxiv link</a><br><br>
+<h3 id="Proxilmal-Policy-Optimization">Proxilmal Policy Optimization<a class="anchor-link" href="#Proxilmal-Policy-Optimization">&#182;</a></h3><p>PPO is a state of the art algorithm in the field of Reinforcement learning. It has proven record of performing well in sophisticated envoronments especially with continuous action spaces such as Robotics. It is similar to Trust Region Policy Optimization (TRPO) but follows a simpler algorithm making it computionally less costly. It was proposed in the following a research paper <b><i>Proximal Policy Optimization Algorithms</b><i> by <a href="https://openai.com/">OpenAI</a>  <a href="https://arxiv.org/abs/1707.06347">(arxiv link)</a><br><br>
 Implemented by : Irfan Mohammad Al Hasib <br>
 E-Mail : irfanhasib.me@gmail.com <br>
 Website : <a href="https://irfanhasib0.github.io">https://irfanhasib0.github.io</a><br>
 LinkedIN : <a href="https://www.linkedin.com/in/irfanhasib/">https://www.linkedin.com/in/irfanhasib/</a><br></p>
-<ol>
-<li>Impletated from scratch with tensorflow</li>
-<li>Tested for Bipedal walker environment of OpenAI <br></li>
-</ol>
-
+<p>Implementation Note :</p>
+<ul>
+    <li> Impletated from scratch in python using following libraries - tensorflow, numpy, gym, opencv, matplotlib. </li>
+    <li> Tested for Bipedal walker environment of OpenAI. </li>
+</ul>
 </div>
 </div>
 </div>
@@ -13124,7 +13123,6 @@ LinkedIN : <a href="https://www.linkedin.com/in/irfanhasib/">https://www.linkedi
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">pickle</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span><span class="p">,</span><span class="n">trange</span>
@@ -13167,7 +13165,7 @@ LinkedIN : <a href="https://www.linkedin.com/in/irfanhasib/">https://www.linkedi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Hiperparameters-setting">Hiperparameters setting<a class="anchor-link" href="#Hiperparameters-setting">&#182;</a></h3>
+<h3 id="Hyper-parameters-setting">Hyper-parameters setting<a class="anchor-link" href="#Hyper-parameters-setting">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13204,55 +13202,53 @@ LinkedIN : <a href="https://www.linkedin.com/in/irfanhasib/">https://www.linkedi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Classes-definations">Classes definations<a class="anchor-link" href="#Classes-definations">&#182;</a></h3><ol>
-<li><p>Class Actor():</p>
+<h3 id="Class-definations">Class definations<a class="anchor-link" href="#Class-definations">&#182;</a></h3><p><b> 1. Class Actor():</b></p>
 
-<pre><code> Class for creating actor Network inheriting tensorflow.keras Model class
+<pre><code>    Class for creating actor Network inheriting tensorflow.keras Model class
 
- -&gt; __init__ : Layer definations
- -&gt; call() : Network building</code></pre>
-</li>
-<li><p>Class Critic():</p>
+    -&gt; __init__ : Layer definations
+    -&gt; call() : Network building
 
-<pre><code> -Class for creating actor Network inheriting tensorflow.keras Model class
+</code></pre>
+<p><b> 2. Class Critic():</b></p>
 
- -&gt; __init__ : Layer definations
- -&gt; call() : Network building</code></pre>
-</li>
-<li><p>Class Memory():</p>
+<pre><code>    Class for creating actor Network inheriting tensorflow.keras Model class
 
-<pre><code> Class for storing data samples and retriving when necessary. Each data sample to be stored consists of : state , action , mean, std, value, mask, reward
+    -&gt; __init__ : Layer definations
+    -&gt; call() : Network building
 
- -&gt; append(data sample) appends one sample 
- -&gt; retrive() -&gt; data sample, retrives all the stored samples and cleares memory</code></pre>
-</li>
-<li>Class Environment():</li>
-</ol>
+</code></pre>
+<p><b> 3. Class Memory():</b></p>
+
+<pre><code>    Class for storing data samples and retriving when necessary. Each data sample to be stored consists of : state , action , mean, std, value, mask, reward
+
+    -&gt; append(data sample) appends one sample into memory
+    -&gt; retrive() -&gt; data sample, retrives all the stored samples and cleares memory
+
+</code></pre>
+<p><b> 4. Class Environment():</b></p>
 
 <pre><code>    A wrapper around OpenAI environment. 
 
     -&gt; reset() resets the environment
-    -&gt; step() takes action and returns obserrvation, reward, terminal, info
+    -&gt; step() takes action and returns observation, reward, terminal, info
     -&gt; render() renders current environment image
     -&gt; close() closes environment instance
 
 </code></pre>
-<ol>
-<li><p>CLass PPO_Model() :</p>
+<p><b> 5. CLass PPO_Model() : </b></p>
 
-<pre><code>  Takes all the hiperparameters as input.
+<pre><code>     Takes all the hyper-parameters as input.
 
- -&gt; calc_gae_values : Calculates generalized advantage estimations from values, rewards and masks
- -&gt; calc_actor_loss : Calculates actor loss
- -&gt; train actor : Trains actor model with calculated loss
- -&gt; calc critic loss : Calculate critic loss
- -&gt; train critic : Trains Critic model with calculated loss
- -&gt; test model : Test the actor model for environment and returns test reward
+    -&gt; calc_gae_values : Calculates generalized advantage estimations from values, rewards and masks
+    -&gt; calc_actor_loss : Calculates actor loss
+    -&gt; train actor : Trains actor model with calculated loss
+    -&gt; calc critic loss : Calculate critic loss
+    -&gt; train critic : Trains Critic model with calculated loss
+    -&gt; test model : Test the actor model for environment and returns test reward
 
- -&gt; get_log_probability : calculates log of gaussian probabilities from action , mean and std
- -&gt; get_entropy : calculates entropy from std</code></pre>
-</li>
-</ol>
+    -&gt; get_log_probability : calculates log of gaussian probabilities from action , mean and std
+    -&gt; get_entropy : calculates entropy from std</code></pre>
 
 </div>
 </div>
@@ -13470,6 +13466,14 @@ LinkedIN : <a href="https://www.linkedin.com/in/irfanhasib/">https://www.linkedi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Brief-Flow-Chart-of-the-training-algorithm">Brief Flow Chart of the training algorithm<a class="anchor-link" href="#Brief-Flow-Chart-of-the-training-algorithm">&#182;</a></h3><p><img src="img/ppo_algo_1.jpg"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-training-loop">The training loop<a class="anchor-link" href="#The-training-loop">&#182;</a></h3>
 </div>
 </div>
@@ -13552,7 +13556,7 @@ LinkedIN : <a href="https://www.linkedin.com/in/irfanhasib/">https://www.linkedi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Training-output-is-cleared----">Training output is cleared ---<a class="anchor-link" href="#Training-output-is-cleared----">&#182;</a></h3>
+<h4 id="Note:-Training-output-is-removed-for-ease-of-reading.">Note: Training output is removed for ease of reading.<a class="anchor-link" href="#Note:-Training-output-is-removed-for-ease-of-reading.">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13719,7 +13723,7 @@ LinkedIN : <a href="https://www.linkedin.com/in/irfanhasib/">https://www.linkedi
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Thank-You">Thank You<a class="anchor-link" href="#Thank-You">&#182;</a></h3>
+<h3 id="Thank-You!">Thank You!<a class="anchor-link" href="#Thank-You!">&#182;</a></h3>
 </div>
 </div>
 </div>

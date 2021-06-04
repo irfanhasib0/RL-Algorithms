@@ -7,7 +7,9 @@
     <b><I>
     <li>Section 1: Overview </li>
     <li>Section 2. Result</li>
-    <li>Section 3. Flowchart</li>
+    <li>Section 3. Code</li>
+    <li>Section 4: Usage </li>
+    <li>Section 5. Flowchart</li>
     </b></I>
 </ul>
 
@@ -34,21 +36,36 @@ Results PPO on Bipedal Walker
      title="(Open Image in new tab for full resolution)" width="100%" />
 
 <img src="img/bipedal_ppo.gif" align="left"
-     title="(Open Image in new tab for full resolution)" width="45%" />
+     title="(Open Image in new tab for full resolution)" width="50%" />
 <img src="img/lunar_ppo.gif" align="left"
-     title="(Open Image in new tab for full resolution)" width="50%" /><br>
+     title="(Open Image in new tab for full resolution)" width="50%" /></br>
     
 </div>
 
-<h3> Codes </h3>
-<ul>
-<li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/PPO_Cleaned_Code/5.1_PPO_Bipedal_Walker-revised-clr>  PPO for Bipedal Walker - Notebook (Cleaned and Organized code) </a></li>
-
-<li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/5.2_PPO_Lunar_Lander.ipynb>  PPO for Lunar Lander - Notebook (Raw Code) </a></li>
-</ul>
-    
 <div>
-<h3> 3. Detailed Flow Chart for DQN and DDPG : (Please Zoom or Open in New tab for proper resolution) </h3>
+<h3> 3. Codes </h3>
+<ul>
+<li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/PPO_Cleaned_Code/5.1_PPO_Bipedal_Walker-revised.ipynb> <b>  PPO for Bipedal Walker - Notebook (Cleaned and Organized code)</b> </a></li>
+
+<li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/5.2_PPO_Lunar_Lander.ipynb> <b>  PPO for Lunar Lander - Notebook (Raw Code)</b> </a></li>
+</ul>
+</div>
+
+<div>
+<h3> 4. Usage </h3>
+The code is tested with package versions -
+<ul>
+    <li> <b>Python-3.7.7 </li>
+    <li> tensorflow-2.3.0 </li>
+    <li> numpy-1.18.1 </li> 
+    <li> opencv-4.5.2  </li>
+    <li> gym-0.14.0 </li>
+    <li> matplotlib-3.2.1<b/></li>
+</ul>
+</div>
+
+<div>
+<h3> 5. Detailed Flow Chart for DQN and DDPG : (Please Zoom or Open in New tab for proper resolution) </h3>
 
     
 <img src="img/ppo_algo_1.jpg" align="left"

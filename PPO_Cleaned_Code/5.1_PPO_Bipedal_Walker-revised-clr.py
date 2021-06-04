@@ -3,15 +3,17 @@
 
 # ### Proxilmal Policy Optimization
 # 
-# This is an implementation of the following paper by <a href="https://openai.com/">OpenAI</a><br>
-# <b><I>Proximal Policy Optimization Algorithms</b></I> <a href="https://arxiv.org/abs/1707.06347">arxiv link</a><br><br>
+# PPO is a state of the art algorithm in the field of Reinforcement learning. It has proven record of performing well in sophisticated envoronments especially with continuous action spaces such as Robotics. It is similar to Trust Region Policy Optimization (TRPO) but follows a simpler algorithm making it computionally less costly. It was proposed in the following a research paper <b><i>Proximal Policy Optimization Algorithms</b><i> by <a href="https://openai.com/">OpenAI</a>  <a href="https://arxiv.org/abs/1707.06347">(arxiv link)</a><br><br>
 # Implemented by : Irfan Mohammad Al Hasib <br>
 # E-Mail : irfanhasib.me@gmail.com <br>
 # Website : <a href="https://irfanhasib0.github.io">https://irfanhasib0.github.io</a><br>
 # LinkedIN : <a href="https://www.linkedin.com/in/irfanhasib/">https://www.linkedin.com/in/irfanhasib/</a><br>
 # 
-# 1. Impletated from scratch with tensorflow
-# 2. Tested for Bipedal walker environment of OpenAI <br>
+# Implementation Note :
+# <ul>
+#     <li> Impletated from scratch in python using following libraries - tensorflow, numpy, gym, opencv, matplotlib. </li>
+#     <li> Tested for Bipedal walker environment of OpenAI. </li>
+# </ul>
 # 
 # 
 
@@ -40,7 +42,6 @@ import glob
 import math
 import cv2
 from matplotlib import pyplot as plt
-import pandas as pd
 import pickle
 from collections import deque
 from tqdm import tqdm,trange
@@ -63,7 +64,7 @@ exp_root_path='exps/ppo_exp_1'
 if not os.path.exists(exp_root_path): os.makedirs(exp_root_path)
 
 
-# ### Hiperparameters setting
+# ### Hyper-parameters setting
 
 # In[3]:
 
@@ -88,39 +89,40 @@ with open(exp_root_path+'/params.txt','w') as file:
     file.write(param_str)
 
 
-# ###  Classes definations
-# 1. Class Actor():
+# ###  Class definations
+# <b> 1. Class Actor():</b>
 # 
 #         Class for creating actor Network inheriting tensorflow.keras Model class
 #         
 #         -> __init__ : Layer definations
 #         -> call() : Network building
-# 2. Class Critic():
 #         
-#         -Class for creating actor Network inheriting tensorflow.keras Model class
+# <b> 2. Class Critic():</b>
+#         
+#         Class for creating actor Network inheriting tensorflow.keras Model class
 #         
 #         -> __init__ : Layer definations
 #         -> call() : Network building
 #         
-# 3. Class Memory():
+# <b> 3. Class Memory():</b>
 #         
 #         Class for storing data samples and retriving when necessary. Each data sample to be stored consists of : state , action , mean, std, value, mask, reward
 #         
-#         -> append(data sample) appends one sample 
+#         -> append(data sample) appends one sample into memory
 #         -> retrive() -> data sample, retrives all the stored samples and cleares memory
-# 4. Class Environment():
 #         
+# <b> 4. Class Environment():</b>
 #         
 #         A wrapper around OpenAI environment. 
 #         
 #         -> reset() resets the environment
-#         -> step() takes action and returns obserrvation, reward, terminal, info
+#         -> step() takes action and returns observation, reward, terminal, info
 #         -> render() renders current environment image
 #         -> close() closes environment instance
 #         
-# 4. CLass PPO_Model() : 
+# <b> 5. CLass PPO_Model() : </b>
 #             
-#          Takes all the hiperparameters as input.
+#          Takes all the hyper-parameters as input.
 #          
 #         -> calc_gae_values : Calculates generalized advantage estimations from values, rewards and masks
 #         -> calc_actor_loss : Calculates actor loss
@@ -128,7 +130,7 @@ with open(exp_root_path+'/params.txt','w') as file:
 #         -> calc critic loss : Calculate critic loss
 #         -> train critic : Trains Critic model with calculated loss
 #         -> test model : Test the actor model for environment and returns test reward
-#         
+#      
 #         -> get_log_probability : calculates log of gaussian probabilities from action , mean and std
 #         -> get_entropy : calculates entropy from std
 
@@ -335,6 +337,9 @@ class PPO_Model():
         return total_reward
 
 
+# ### Brief Flow Chart of the training algorithm
+# <img src="img/ppo_algo_1.jpg">
+
 # ### The training loop
 
 # In[5]:
@@ -404,6 +409,8 @@ if train_ppo_agent==True:
     env.close()
     plt.plot(rewards_log)
 
+
+# #### Note: Training output is removed for ease of reading.
 
 # ### Train and Test rewards
 
@@ -476,7 +483,7 @@ with imageio.get_writer(img_save_path+'bipedal_ppo.gif', mode='I') as writer:
 
 # <img src = 'exps/ppo_exp_1/bipedal_ppo/bipedal_ppo.gif'>
 
-# ### Thank You
+# ### Thank You!
 
 # In[ ]:
 
