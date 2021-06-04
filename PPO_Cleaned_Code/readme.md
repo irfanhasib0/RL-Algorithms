@@ -1,8 +1,5 @@
 <div>
-<br><h1  style="color:grey;" >
-<a id="dqn_ddpg_link"></a> DQN , DDPG, PPO A2C Implementation from scratch</h1></br>
-<a style="color:navyblue;font-size:15px;" href ='#table_of_content_link'>Go Back to Table of Content</a>
-
+    <h2> Sections </h2>
 <ul id="ul_1">
     <b><I>
     <li>Section 1: Overview </li>
@@ -12,11 +9,11 @@
     <li>Section 5. Flowchart</li>
     </b></I>
 </ul>
+</div>
 
-
+<div> 
 <h3> 1.  Overview </h3>
 
-<div id=div_style> 
   PPO implemented and tested on OpenAI gym Bipedal Walker Environment.The algorithm is implemnted from scratch using TensorFlow, Numpy and Python.
 This is an implementation of the following paper by <a href="https://openai.com/">OpenAI</a><br>
 <b><i>Proximal Policy Optimization Algorithms</b></i> <a href="https://arxiv.org/abs/1707.06347">arxiv link</a><br><br>
@@ -87,3 +84,8 @@ The code is tested with package versions -
 <li><a style="color:navyblue;font-size:15px;" href= https://github.com/irfanhasib0/RL-Algorithms/blob/master/5.2_PPO_Lunar_Lander.ipynb>  PPO for Lunar Lander - Notebook </a></li>
 </ul>
 </div>
+
+
+```python
+
+```
