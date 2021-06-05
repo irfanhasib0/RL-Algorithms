@@ -62,7 +62,7 @@ The code is tested with package versions -
 </div>
 
 <div>
-<h3> 5. Detailed Flow Chart for DQN and DDPG : (Please Zoom or Open in New tab for proper resolution) </h3>
+<h3> 5. Detailed Flow Chart for PPO :  </h3>
 
     
 <img src="img/ppo_algo_1.jpg" align="left"
